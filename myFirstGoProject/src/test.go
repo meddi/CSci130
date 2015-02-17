@@ -18,6 +18,10 @@ type myType struct {
 	val2 string
 }
 
+type Rectangle struct {
+	length, width int
+}
+
 func main() {
 	
 	x, y := 2, 5
@@ -44,6 +48,14 @@ func main() {
 	changeVal(&msg3)
 	
 	fmt.Printf("Addr: %v Value1 : %d Value2: %s\n", ptr, msg3.val1, msg3.val2)
+	
+	r := Rectangle {}
+	fmt.Println("Default rectangle is: ", r)
+	
+	r1 := Rectangle{2, 1, "my_r1"}
+	
+	fmt.Println("Rectangle r1 is: ", r1)
+	
 }
 
 func swap(x *int, y *int) {
@@ -60,12 +72,3 @@ func changeVal(val *myType) {
 	
 	fmt.Printf("Addr: %v Value1: %d Value2: %s\n", ptr, val.val1, val.val2)
 }
--------------------------OUTPUT----------------------------------------------------------
-X =  2 Y =  5
-X =  5 Y =  2
-First Declared, then Assigned!
-Declared and Assigned!
-Bill
-Addr: 0xc20801e040 Value1 : 10 Value2: Bill
-Addr: 0xc20804c020 Value1: 20 Value2: Jill
-Addr: 0xc20801e040 Value1 : 20 Value2: Jill
