@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package main 
 
 import (
@@ -18,3 +19,21 @@ func main() {
     http.ListenAndServe(":8080", nil)
 }
 
+=======
+package hello
+
+import (
+    "net/http"
+    "fmt"
+)
+
+// Default Request Handler
+func defaultHandler(w http.ResponseWriter, r *http.Request) {
+    fmt.Fprintf(w, "<h1>Hello %s!</h1>", r.URL.Path[1:])
+}
+
+func main() {
+    http.HandleFunc("/", defaultHandler)
+    http.ListenAndServe(":8080", nil)
+}
+>>>>>>> branch 'master' of https://github.com/meddi/CSci130.git
