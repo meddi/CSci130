@@ -2,12 +2,6 @@ package main
 
 import (
 	"fmt"
-	"math/rand"
-	"os"
-	"net/http"
-	
-	"go_appengine"
-	
 )
 
 // Defining constants
